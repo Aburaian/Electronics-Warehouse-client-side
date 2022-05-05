@@ -6,22 +6,22 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="primary">
+      <Navbar collapseOnSelect expand="lg" bg="light" variant="primary">
         <Container>
           <Navbar.Brand as={Link} to="/">
-            <img height={30} src={logo} alt="" />
+            <img height={40} src={logo} alt="" />
             <span className="p-2">Electronics Warehouse</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto fw-bold text-uppercase">
-              <Nav.Link as={Link} to="services">
+              <Nav.Link as={Link} to="products">
                 Manage items
               </Nav.Link>
-              <Nav.Link as={Link} to="services">
+              <Nav.Link as={Link} to="addItems">
                 Add items
               </Nav.Link>
-              <Nav.Link as={Link} to="services">
+              <Nav.Link as={Link} to="myItems">
                 My items
               </Nav.Link>
               <Nav.Link as={Link} to="blogs">
