@@ -3,12 +3,13 @@ import { Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const Product = ({ product }) => {
+  const { id, price, img, description, name, quantity } = product;
   const navigate = useNavigate();
 
-  const navigateCheckOut = () => {
-    navigate("/productdetails");
+  const navigateUpdate = (id) => {
+    navigate(`/products/${id}`);
   };
-  const { price, img, description, name, quantity } = product;
+
   return (
     <div className="col-lg-4 col-md-6 col-sm-12 p-4">
       <Card style={{ width: "22rem" }}>
@@ -23,7 +24,7 @@ const Product = ({ product }) => {
             <span className="fw-bold">Available Quantity:</span> {quantity}
           </Card.Text>
           <Button
-            onClick={navigateCheckOut}
+            onClick={() => navigateUpdate(id)}
             className="text-uppercase text-center"
             variant="primary"
           >

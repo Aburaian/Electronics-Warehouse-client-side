@@ -1,5 +1,6 @@
 import React from "react";
 import useProducts from "../../../hooks/useProduct";
+import Footer from "../../SharedPages/Footer/Footer";
 import Bannar from "../Bannar/Bannar";
 import Product from "../Product/Product";
 
@@ -19,6 +20,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
