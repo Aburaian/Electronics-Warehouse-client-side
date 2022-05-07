@@ -37,9 +37,6 @@ const Header = () => {
               </Nav.Link>
             </Nav>
             <Nav className="fw-bold text-uppercase">
-              <Nav.Link as={Link} to="about">
-                About
-              </Nav.Link>
               {user ? (
                 <button
                   className="btn btn-link fw-bold text-uppercase text-info text-decoration-none"
