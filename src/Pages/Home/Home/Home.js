@@ -2,7 +2,9 @@ import React from "react";
 import useProducts from "../../../hooks/useProduct";
 import Footer from "../../SharedPages/Footer/Footer";
 import Bannar from "../Bannar/Bannar";
+import InventoryGalary from "../InventoryGalary/InventoryGalary";
 import Product from "../Product/Product";
+import Reviews from "../Reviews/Reviews";
 
 const Home = () => {
   const [products] = useProducts();
@@ -20,6 +22,8 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <InventoryGalary></InventoryGalary>
+      <Reviews></Reviews>
       <Footer></Footer>
     </div>
   );

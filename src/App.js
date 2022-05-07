@@ -9,6 +9,7 @@ import Products from "./Pages/Home/Products/Products";
 import LogIn from "./Pages/LogIn/LogIn/LogIn";
 import Register from "./Pages/LogIn/Register/Register";
 import MyItem from "./Pages/MyItem/MyItem";
+import RequireAuth from "./Pages/LogIn/RequireAuth/RequireAuth";
 import Header from "./Pages/SharedPages/Header/Header";
 import NotFound from "./Pages/SharedPages/NotFound/NotFound";
 
@@ -20,16 +21,21 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/products" element={<Products></Products>}></Route>
-        <Route
-          path="/products/:productId"
-          element={<ProductDetail></ProductDetail>}
-        ></Route>
+
         <Route path="/addItems" element={<AddItems></AddItems>}></Route>
         <Route path="/myItems" element={<MyItem></MyItem>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<LogIn></LogIn>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
+        <Route
+          path="/products/:productId"
+          element={
+            <RequireAuth>
+              <ProductDetail></ProductDetail>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
