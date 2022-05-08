@@ -3,7 +3,8 @@ import { Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const Product = ({ product }) => {
-  const { id, price, img, description, name, quantity } = product;
+  const { _id, price, img, supplierName, description, name, quantity } =
+    product;
   const navigate = useNavigate();
 
   const navigateUpdate = (id) => {
@@ -18,13 +19,16 @@ const Product = ({ product }) => {
           <Card.Title>{name}</Card.Title>
           <Card.Text>{description}</Card.Text>
           <Card.Text>
+            <span className="fw-bold">supplier Name:</span> {supplierName}
+          </Card.Text>
+          <Card.Text>
             <span className="fw-bold">Price:</span> ${price}
           </Card.Text>
           <Card.Text>
             <span className="fw-bold">Available Quantity:</span> {quantity}
           </Card.Text>
           <Button
-            onClick={() => navigateUpdate(id)}
+            onClick={() => navigateUpdate(_id)}
             className="text-uppercase text-center"
             variant="primary"
           >

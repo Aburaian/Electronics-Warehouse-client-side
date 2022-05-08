@@ -6,11 +6,11 @@ const ProductDetail = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
-    const url = `http://localhost:3000/products/${productId}`;
+    const url = `http://localhost:5000/product/${productId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
-  }, [productId]);
+  }, [productId, product]);
   return (
     <div className="row w-50 mx-auto">
       <div className="col-lg-4 col-md-6 col-sm-12 p-4">
@@ -20,6 +20,10 @@ const ProductDetail = () => {
             <Card.Title>{product.name}</Card.Title>
             <Card.Text>{product.description}</Card.Text>
             <Card.Text>
+              <span className="fw-bold">supplier Name:</span>{" "}
+              {product.supplierName}
+            </Card.Text>
+            <Card.Text>
               <span className="fw-bold">Price:</span> ${product.price}
             </Card.Text>
             <Card.Text>
@@ -27,7 +31,7 @@ const ProductDetail = () => {
               {product.quantity}
             </Card.Text>
             <Button
-              // onClick={() => navigateUpdate(id)}
+              // onClick={() => navigateUpdate(_id)}
               className="text-uppercase text-center"
               variant="primary"
             >
