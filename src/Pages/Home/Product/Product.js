@@ -5,10 +5,28 @@ import { useNavigate } from "react-router-dom";
 const Product = ({ product }) => {
   const { _id, price, img, supplierName, description, name, quantity } =
     product;
+
   const navigate = useNavigate();
 
   const navigateUpdate = (id) => {
     navigate(`/products/${id}`);
+  };
+  const addNavigate = () => {
+    navigate("/addItems");
+  };
+
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are you sure?");
+    if (proceed) {
+      const url = `http://localhost:5000/product/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+    }
   };
 
   return (
@@ -29,10 +47,24 @@ const Product = ({ product }) => {
           </Card.Text>
           <Button
             onClick={() => navigateUpdate(_id)}
-            className="text-uppercase text-center"
+            className="text-uppercase me-4 text-center"
             variant="primary"
           >
             Update
+          </Button>
+          <Button
+            onClick={() => handleDelete(_id)}
+            className="text-uppercase me-4 text-center"
+            variant="primary"
+          >
+            Delete
+          </Button>
+          <Button
+            onClick={addNavigate}
+            className="text-uppercase me-4 text-center"
+            variant="primary"
+          >
+            Add
           </Button>
         </Card.Body>
       </Card>
