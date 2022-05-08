@@ -14,13 +14,14 @@ const ProductDetail = () => {
   }, [productId, product]);
 
   const handleDelivered = () => {
-    const updateQuantity = product?.quantity - 1;
     fetch(`http://localhost:5000/product/${productId}`, {
-      method: "put",
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ updateQuantity }),
+      body: JSON.stringify({
+        quantity: product.quantity - 1,
+      }),
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
@@ -40,6 +41,9 @@ const ProductDetail = () => {
       })
         .then((res) => res.json())
         .then((data) => console.log(data));
+
+      alert("users added successfully!!!");
+      e.target.reset();
     } else {
       toast.error("put a valid integer number", {
         id: "putValid",
