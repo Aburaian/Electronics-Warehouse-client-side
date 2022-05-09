@@ -5,7 +5,7 @@
 
 ## Description
 
-- The name of the website is Electronics Warehouse.  As seen on this website, 
+- The name of the website is Electronics Warehouse.  As seen on this website all electronice inventory details, price suplier name and inventory name show, 
 
 - There are five pages , logo and website title in the menu bar. The name of the page is: Home, Manage items, Add items, Blogs, My items, login.
 
