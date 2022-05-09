@@ -36,7 +36,7 @@ const Bannar = () => {
         <img
           height={570}
           className="d-block w-100"
-          src="https://thumbs.dreamstime.com/b/female-worker-looking-up-talking-mobile-phone-warehouse-front-view-freight-transportation-155273493.jpg"
+          src="https://ichef.bbci.co.uk/news/976/cpsprodpb/BAD7/production/_122913874_gettyimages-596631439.jpg"
           alt="Third slide"
         />
 
