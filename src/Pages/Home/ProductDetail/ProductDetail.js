@@ -7,14 +7,14 @@ const ProductDetail = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/product/${productId}`;
+    const url = `https://stark-coast-67001.herokuapp.com/product/${productId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [productId, product]);
 
   const handleDelivered = () => {
-    fetch(`http://localhost:5000/product/${productId}`, {
+    fetch(`https://stark-coast-67001.herokuapp.com/product/${productId}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -32,7 +32,7 @@ const ProductDetail = () => {
     const number = e.target.number.value;
     if (number > 0) {
       const updateQuantity = product?.quantity + parseInt(number);
-      fetch(`http://localhost:5000/product/${productId}`, {
+      fetch(`https://stark-coast-67001.herokuapp.com/product/${productId}`, {
         method: "put",
         headers: {
           "content-type": "application/json",
